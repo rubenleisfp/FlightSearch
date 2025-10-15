@@ -16,6 +16,12 @@ object SearchDestination : NavigationDestination {
     override val titleRes = R.string.app_name
 }
 
+/**
+ * Pantalla de busqueda
+ *
+ * @param modifier Modificador de la pantalla de bu squeda
+ * @param onSelectCode Funcion que se llama cuando se selecciona un codigo de aeropuerto
+ */
 @Composable
 fun SearchScreen(
     modifier: Modifier = Modifier,
@@ -24,7 +30,7 @@ fun SearchScreen(
     val viewModel: SearchViewModel = viewModel(factory = SearchViewModel.Factory)
     val uiState = viewModel.uiState.collectAsState().value
 
-    Column( modifier = modifier) {
+    Column(modifier = modifier) {
         SearchTextField(
             uiState.searchQuery,
             onQueryChange = {
@@ -39,7 +45,7 @@ fun SearchScreen(
             val favoriteList = uiState.favoriteList
             val airportList = uiState.airportList
 
-            if (favoriteList.isNotEmpty()){
+            if (favoriteList.isNotEmpty()) {
                 FavoriteResult(
                     airportList = airportList,
                     favoriteList = favoriteList,
@@ -55,7 +61,7 @@ fun SearchScreen(
                     },
                 )
             } else {
-                Text(text = "No Favorites yet")
+                Text(text = "Aun no hay favoritos")
             }
         } else {
 

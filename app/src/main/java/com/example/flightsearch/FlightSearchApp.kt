@@ -17,6 +17,9 @@ import com.example.flightsearch.ui.screens.search.SearchDestination
 import com.example.flightsearch.ui.screens.search.SearchScreen
 
 
+/**
+ * Composable que renderiza la pantalla principal de la app de busqueda de vuelos.
+ */
 @Composable
 fun FlightSearchApp() {
     val navController = rememberNavController()
@@ -27,6 +30,7 @@ fun FlightSearchApp() {
             modifier = Modifier.padding(paddingValues)
         ) {
             composable(route = SearchDestination.route) {
+                //Ventana de navegacion por defecto. Permite buscar por codigo de aeropuerto
                 SearchScreen(
                     modifier = Modifier,
                     onSelectCode = {
@@ -43,7 +47,7 @@ fun FlightSearchApp() {
             ) { navBackStackEntry ->
                 // Retrieve the passed argument
                 //val code =
-                //    navBackStackEntry.arguments?.getString(FlightScreenDestination.codeArg)
+                //    navBackEntry.arguments?.getString(FlightScreenDestination.codeArg)
                 FlightScreen()
 
             }

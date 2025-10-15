@@ -11,6 +11,15 @@ import com.example.flightsearch.model.Airport
 import com.example.flightsearch.model.Favorite
 import com.example.flightsearch.ui.screens.flight_screen.FlightRow
 
+/**
+ * Muestra una lista de favoritos con sus respectivos codigos de aeropuerto,
+ * nombres de aeropuerto y botones para agregar o eliminar favoritos.
+ *
+ * @param modifier Modificador de la pantalla de favoritos
+ * @param airportList Lista de aeropuertos
+ * @param favoriteList Lista de favoritos
+ * @param onFavoriteClick Funcion que se llama cuando se selecciona un favorito
+ */
 @Composable
 fun FavoriteResult(
     modifier: Modifier = Modifier,

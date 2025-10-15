@@ -11,6 +11,17 @@ import com.example.flightsearch.data.MockData
 import com.example.flightsearch.model.Airport
 import com.example.flightsearch.model.Favorite
 
+/**
+ * Muestra una lista de vuelos que se pueden filtrar
+ * por un codigo de aeropuerto de origen y una lista de favoritos
+ * que se pueden agregar o eliminar.
+ *
+ * @param modifier Modificador de la pantalla de favoritos
+ * @param departureAirport Aeropuerto de origen
+ * @param destinationList Lista de aeropuertos de destino
+ * @param favoriteList Lista de favoritos
+ * @param onFavoriteClick Funcion que se llama cuando se selecciona un favorito
+ */
 @Composable
 fun FlightResults(
     modifier: Modifier = Modifier,
@@ -29,7 +40,8 @@ fun FlightResults(
             items(destinationList, key = { it.id }) { item ->
                 val isFavorite = favoriteList.find { f ->
                     f.departureCode == departureAirport.code &&
-                            f.destinationCode == item.code }
+                            f.destinationCode == item.code
+                }
 
                 FlightRow(
                     isFavorite = isFavorite != null,

@@ -11,6 +11,13 @@ import androidx.compose.ui.unit.dp
 import com.example.flightsearch.model.Airport
 
 
+/**
+ * Muestra una lista de aeropuertos que se pueden seleccionar.
+ *
+ * @param modifier Modificador de la pantalla de resultados.
+ * @param airports Lista de aeropuertos que se pueden seleccionar.
+ * @param onSelectCode Funcion que se llama cuando se selecciona un codigo de aeropuerto.
+ */
 @Composable
 fun SearchResults(
     modifier: Modifier = Modifier,

@@ -14,6 +14,12 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 
+/**
+ * Muestra un campo de texto para buscar aeropuertos.
+ *
+ * @param query El texto actual de la query.
+ * @param onQueryChange La funcion que se llama cuando se cambia el texto de la query.
+ */
 @Composable
 fun SearchTextField(
     query: String,
@@ -24,7 +30,7 @@ fun SearchTextField(
     TextField(
         value = query,
         onValueChange = { onQueryChange(it) },
-        placeholder = { Text(text = "Search here") },
+        placeholder = { Text(text = "Buscar aqui") },
         singleLine = true,
         maxLines = 1,
         keyboardOptions = KeyboardOptions(
